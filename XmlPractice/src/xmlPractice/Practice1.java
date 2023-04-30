@@ -15,25 +15,25 @@ import org.xml.sax.SAXException;
 public class Practice1 {
 
 	public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException {
-		DocumentBuilder docBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+		DocumentBuilder k21_docBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
 		
-		Document doc = docBuilder.parse(new File("C:\\Users\\kopo24\\Desktop\\score.xml"));
+		Document k21_doc = k21_docBuilder.parse(new File("C:\\Users\\kopo24\\Desktop\\score.xml"));
 		
-		Element root = doc.getDocumentElement();
+		Element k21_root = k21_doc.getDocumentElement();
 		
-		NodeList tag_name = doc.getElementsByTagName("name");
-		NodeList tag_studentid = doc.getElementsByTagName("studentid");
-		NodeList tag_kor = doc.getElementsByTagName("kor");
-		NodeList tag_eng = doc.getElementsByTagName("eng");
-		NodeList tag_mat = doc.getElementsByTagName("mat");
+		NodeList k21_tag_name = k21_doc.getElementsByTagName("name");
+		NodeList k21_tag_studentid = k21_doc.getElementsByTagName("studentid");
+		NodeList k21_tag_kor = k21_doc.getElementsByTagName("kor");
+		NodeList k21_tag_eng = k21_doc.getElementsByTagName("eng");
+		NodeList k21_tag_mat = k21_doc.getElementsByTagName("mat");
 		
 		System.out.printf("************************************\n");
-		for (int i = 0; i < tag_name.getLength(); i++) {
-			System.out.printf("이름 : %s\n", tag_name.item(i).getFirstChild().getNodeValue());
-			System.out.printf("학번 : %s\n", tag_studentid.item(i).getFirstChild().getNodeValue());
-			System.out.printf("국어 : %s\n", tag_kor.item(i).getFirstChild().getNodeValue());
-			System.out.printf("영어 : %s\n", tag_eng.item(i).getFirstChild().getNodeValue());
-			System.out.printf("수학 : %s\n", tag_mat.item(i).getFirstChild().getNodeValue());
+		for (int k21_i = 0; k21_i < k21_tag_name.getLength(); k21_i++) {
+			System.out.printf("이름 : %s\n", k21_tag_name.item(k21_i).getFirstChild().getNodeValue());
+			System.out.printf("학번 : %s\n", k21_tag_studentid.item(k21_i).getFirstChild().getNodeValue());
+			System.out.printf("국어 : %s\n", k21_tag_kor.item(k21_i).getFirstChild().getNodeValue());
+			System.out.printf("영어 : %s\n", k21_tag_eng.item(k21_i).getFirstChild().getNodeValue());
+			System.out.printf("수학 : %s\n", k21_tag_mat.item(k21_i).getFirstChild().getNodeValue());
 			System.out.printf("************************************\n");
 		}
 	}
