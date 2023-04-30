@@ -12,26 +12,26 @@ import org.json.simple.parser.ParseException;
 public class Practice3 {
 
 	public static void main(String[] args) throws FileNotFoundException, IOException, ParseException {
-		JSONParser parser = new JSONParser();
+		JSONParser k21_parser = new JSONParser();
 		
-		Object obj = parser.parse(new FileReader("C:\\Users\\kopo24\\Desktop\\scorejson.json"));
+		Object k21_obj = k21_parser.parse(new FileReader("C:\\Users\\kopo24\\Desktop\\scorejson.json"));
 		
-		JSONArray array = (JSONArray)obj;
+		JSONArray k21_array = (JSONArray)k21_obj;
 		System.out.println("*********************\n");
-		for (int i = 0; i < array.size(); i++) {
-			JSONObject result = (JSONObject) array.get(i);
-			System.out.println("이름 : " +result.get("name"));
-			System.out.println("학번 : " +result.get("studentid"));
+		for (int k21_i = 0; k21_i < k21_array.size(); k21_i++) {
+			JSONObject k21_result = (JSONObject) k21_array.get(k21_i);
+			System.out.println("이름 : " +k21_result.get("name"));
+			System.out.println("학번 : " +k21_result.get("studentid"));
 			
-			JSONArray score = (JSONArray) result.get("score");
-			long kor = (long)score.get(0);
-			long eng = (long)score.get(1);
-			long mat = (long)score.get(2);
-			System.out.println("국어 : " + kor);
-			System.out.println("영어 : " + eng);
-			System.out.println("수학 : " + mat);
-			System.out.println("총점 : " + (kor + eng + mat));
-			System.out.println("평균 : " + ((kor + eng + mat) / 3.0));
+			JSONArray k21_score = (JSONArray) k21_result.get("score");
+			long k21_kor = (long)k21_score.get(0);
+			long k21_eng = (long)k21_score.get(1);
+			long k21_mat = (long)k21_score.get(2);
+			System.out.println("국어 : " + k21_kor);
+			System.out.println("영어 : " + k21_eng);
+			System.out.println("수학 : " + k21_mat);
+			System.out.println("총점 : " + (k21_kor + k21_eng + k21_mat));
+			System.out.println("평균 : " + ((k21_kor + k21_eng + k21_mat) / 3.0));
 		}
 		
 	}
